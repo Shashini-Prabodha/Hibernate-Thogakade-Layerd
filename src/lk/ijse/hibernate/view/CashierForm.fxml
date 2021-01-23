@@ -60,6 +60,22 @@
                   <Font name="Times New Roman Bold Italic" size="24.0" />
                </font>
             </Label>
+            <JFXComboBox fx:id="cmbCustId" labelFloat="true" layoutX="35.0" layoutY="253.0" onAction="#cmbCustIdOnAction" prefHeight="41.0" prefWidth="184.0" promptText="Customer ID" stylesheets="@style/Login.css" unFocusColor="WHITE">
+               <styleClass>
+                  <String fx:value="cell" />
+                  <String fx:value="combo-box" />
+               </styleClass>
+            </JFXComboBox>
+            <JFXTextField fx:id="txtCustomerName" editable="false" labelFloat="true" layoutX="248.0" layoutY="254.0" prefHeight="38.0" prefWidth="233.0" promptText="Customer Name" styleClass="jfxTextFieldFontColour" stylesheets="@style/Login.css" unFocusColor="WHITE">
+               <font>
+                  <Font name="Times New Roman" size="21.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtCustomerAddress" editable="false" labelFloat="true" layoutX="35.0" layoutY="351.0" prefHeight="38.0" prefWidth="435.0" promptText="Customer Address" styleClass="jfxTextFieldFontColour" stylesheets="@style/Login.css" unFocusColor="WHITE">
+               <font>
+                  <Font name="Times New Roman" size="21.0" />
+               </font>
+            </JFXTextField>
             <JFXComboBox fx:id="cmbItemID" labelFloat="true" layoutX="35.0" layoutY="484.0" onAction="#cmbItemIDOnAction" prefHeight="41.0" prefWidth="159.0" promptText="Item ID" stylesheets="@style/Login.css" unFocusColor="WHITE">
                <styleClass>
                   <String fx:value="cell" />
@@ -157,22 +173,6 @@
                   <Font name="Times New Roman" size="24.0" />
                </font>
             </TextField>
-            <JFXTextField fx:id="txtCustomerAddress" editable="false" labelFloat="true" layoutX="46.0" layoutY="349.0" prefHeight="38.0" prefWidth="435.0" promptText="Customer Address" styleClass="jfxTextFieldFontColour" stylesheets="@style/Login.css" unFocusColor="WHITE">
-               <font>
-                  <Font name="Times New Roman" size="21.0" />
-               </font>
-            </JFXTextField>
-            <JFXComboBox fx:id="cmbCustId" labelFloat="true" layoutX="46.0" layoutY="253.0" onAction="#cmbCustIdOnAction" prefHeight="41.0" prefWidth="184.0" promptText="Customer ID" stylesheets="@style/Login.css" unFocusColor="WHITE">
-               <styleClass>
-                  <String fx:value="cell" />
-                  <String fx:value="combo-box" />
-               </styleClass>
-            </JFXComboBox>
-            <JFXTextField fx:id="txtCustomerName" editable="false" labelFloat="true" layoutX="248.0" layoutY="254.0" prefHeight="38.0" prefWidth="233.0" promptText="Customer Name" styleClass="jfxTextFieldFontColour" stylesheets="@style/Login.css" unFocusColor="WHITE">
-               <font>
-                  <Font name="Times New Roman" size="21.0" />
-               </font>
-            </JFXTextField>
          </children>
       </Pane>
       <BorderPane layoutX="611.0" layoutY="157.0" prefHeight="584.0" prefWidth="1249.0">

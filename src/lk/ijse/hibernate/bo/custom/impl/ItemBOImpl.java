@@ -4,8 +4,10 @@ import lk.ijse.hibernate.bo.custom.ItemBO;
 import lk.ijse.hibernate.dao.DAOFactory;
 import lk.ijse.hibernate.dao.DAOType;
 import lk.ijse.hibernate.dao.custom.ItemDAO;
+import lk.ijse.hibernate.dto.CustomerDTO;
 import lk.ijse.hibernate.dto.ItemDTO;
 import lk.ijse.hibernate.dto.OrderDTO;
+import lk.ijse.hibernate.entity.Customer;
 import lk.ijse.hibernate.entity.Item;
 import lk.ijse.hibernate.entity.Orders;
 
@@ -23,7 +25,15 @@ public class ItemBOImpl implements ItemBO {
 
     @Override
     public boolean updateItem(ItemDTO dto) throws Exception {
-        return itemDAO.update(new Item(dto.getCode(),dto.getDescription(),dto.getPrice(),dto.getQtyOnHand()));
+        List<OrderDTO> orders = dto.getOrders();
+        ArrayList<Orders> list = new ArrayList<>();
+        for (OrderDTO orderDTO : orders) {
+            CustomerDTO customer = orderDTO.getCustomer();
+            Customer c = new Customer(customer.getcustId(), customer.getName(), customer.getAddress());
+
+            list.add(new Orders(orderDTO.getOrderId(),orderDTO.getDate(),c));
+        }
+        return itemDAO.update(new Item(dto.getCode(),dto.getDescription(),dto.getPrice(),dto.getQtyOnHand(),list));
     }
 
     @Override

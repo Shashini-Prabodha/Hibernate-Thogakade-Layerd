@@ -1,19 +1,31 @@
 package lk.ijse.hibernate.dto;
 
+import lk.ijse.hibernate.entity.Item;
+
 import java.util.Date;
+import java.util.List;
 
 public class OrderDTO {
     private String orderId;
-    private String custId;
     private Date date;
+    private CustomerDTO customer;
+
+    private List<ItemDTO> items;
 
     public OrderDTO() {
     }
 
-    public OrderDTO(String orderId, String custId, Date date) {
+    public OrderDTO(String orderId, Date date, CustomerDTO customer) {
         this.orderId = orderId;
-        this.custId = custId;
         this.date = date;
+        this.customer = customer;
+    }
+
+    public OrderDTO(String orderId, Date date, CustomerDTO customer, List<ItemDTO> items) {
+        this.orderId = orderId;
+        this.date = date;
+        this.customer = customer;
+        this.items = items;
     }
 
     public String getOrderId() {
@@ -24,14 +36,6 @@ public class OrderDTO {
         this.orderId = orderId;
     }
 
-    public String getCustId() {
-        return custId;
-    }
-
-    public void setCustId(String custId) {
-        this.custId = custId;
-    }
-
     public Date getDate() {
         return date;
     }
@@ -39,12 +43,30 @@ public class OrderDTO {
     public void setDate(Date date) {
         this.date = date;
     }
+
+    public CustomerDTO getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(CustomerDTO customer) {
+        this.customer = customer;
+    }
+
+    public List<ItemDTO> getItems() {
+        return items;
+    }
+
+    public void setItems(List<ItemDTO> items) {
+        this.items = items;
+    }
+
     @Override
     public String toString() {
-        return "Order{" +
+        return "OrderDTO{" +
                 "orderId='" + orderId + '\'' +
-                ", custId='" + custId + '\'' +
                 ", date=" + date +
+                ", customer=" + customer +
+                ", items=" + items +
                 '}';
     }
 }

@@ -17,6 +17,8 @@ import lk.ijse.hibernate.bo.custom.impl.CustomerBOImpl;
 import lk.ijse.hibernate.dto.CustomerDTO;
 import lk.ijse.hibernate.dto.ItemDTO;
 import lk.ijse.hibernate.dto.OrderDTO;
+import lk.ijse.hibernate.entity.Item;
+import lk.ijse.hibernate.entity.Orders;
 import lk.ijse.hibernate.view.TM.CasheirTM;
 
 import java.time.LocalDate;
@@ -221,21 +223,32 @@ public class CashierViewForm {
     }
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
+
+        CustomerDTO customerDTO = new CustomerDTO(cmbCustId.getValue(), txtCustomerName.getText(), txtCustomerAddress.getText());
         try {
-            OrderDTO orderDTO = new OrderDTO(lblOrderId.getText(), cmbCustId.getValue(), Date.valueOf(lblDate.getText()));
-            boolean saved = orderBO.saveOrder(orderDTO);
-            boolean updated = true;
             ArrayList<ItemDTO> itemList = getAllTblItemData();
 
+            OrderDTO orderDTO = new OrderDTO(lblOrderId.getText(), Date.valueOf(lblDate.getText()),customerDTO,itemList);
+            boolean saved = orderBO.saveOrder(orderDTO);
+            boolean updated = true;
+
+            List<OrderDTO> orderDTOList=new ArrayList<>();
+            orderDTOList.add(orderDTO);
+            for (ItemDTO item : itemList) {
+                item.setOrders(orderDTOList);
+            }
+            orderDTO.setItems(itemList);
+
             for (ItemDTO dto : itemList) {
-                updated = itemBO.updateItem(dto);
+                ItemDTO dto1 = new ItemDTO(dto.getCode(), dto.getDescription(), dto.getPrice(), dto.getQtyOnHand(), dto.getOrders());
+                updated = itemBO.updateItem(dto1);
                 if (!updated) {
                     new Alert(Alert.AlertType.ERROR, "Failed...!").show();
                 }
             }
             if (saved && updated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Order Completed...!" + "\n Total is :" + lblTot.getText() + " Rs. ").show();
-                genarateOrderID();
+                lblOrderId.setText(genarateOrderID());
                 list.clear();
                 tblOrderDetail.refresh();
                 reset();

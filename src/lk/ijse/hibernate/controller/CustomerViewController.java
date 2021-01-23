@@ -74,8 +74,8 @@ public class CustomerViewController {
 
 
             if (added) {
-                new Alert(Alert.AlertType.CONFIRMATION, "OK").show();
-                generateNewID();
+                new Alert(Alert.AlertType.INFORMATION, "OK").show();
+                lblID.setText(generateNewID());
                 loadAllCustomer();
             }
 

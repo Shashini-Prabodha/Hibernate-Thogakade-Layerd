@@ -75,6 +75,7 @@ public class ItemFormController {
                 txtQtyOnHand.clear();
                 txtUPrice.clear();
                 lblID.setText(genarateNewID());
+                txtDescription.focusColorProperty();
 
 
             } else {

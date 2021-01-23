@@ -11,7 +11,6 @@ import java.util.List;
 public class Orders implements SuperEntity{
     @Id
     private String orderId;
-    private String custId;
     private Date date;
     @ManyToOne
     private Customer customer;
@@ -21,22 +20,14 @@ public class Orders implements SuperEntity{
     public Orders() {
     }
 
-    public Orders(String orderId, String custId, Date date) {
+    public Orders(String orderId, Date date, Customer customer) {
         this.orderId = orderId;
-        this.custId = custId;
-        this.date = date;
-    }
-
-    public Orders(String orderId, String custId, Date date, Customer customer) {
-        this.orderId = orderId;
-        this.custId = custId;
         this.date = date;
         this.customer = customer;
     }
 
-    public Orders(String orderId, String custId, Date date, Customer customer, List<Item> items) {
+    public Orders(String orderId, Date date, Customer customer, List<Item> items) {
         this.orderId = orderId;
-        this.custId = custId;
         this.date = date;
         this.customer = customer;
         this.items = items;
@@ -48,15 +39,6 @@ public class Orders implements SuperEntity{
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
-    }
-
-    public String getCustId() {
-        return custId;
-    }
-
-
-    public void setCustId(String custId) {
-        this.custId = custId;
     }
 
     public Date getDate() {
@@ -87,7 +69,6 @@ public class Orders implements SuperEntity{
     public String toString() {
         return "Orders{" +
                 "orderId='" + orderId + '\'' +
-                ", custId='" + custId + '\'' +
                 ", date=" + date +
                 ", customer=" + customer +
                 ", items=" + items +
