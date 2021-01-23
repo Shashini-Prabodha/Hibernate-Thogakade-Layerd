@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="416.0" prefWidth="926.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.controller.CustomerViewController">
+    <children>
+        <JFXTextField fx:id="txtName" focusColor="#dd0055" labelFloat="true" layoutX="29.0" layoutY="148.0" prefHeight="37.0" prefWidth="349.0" promptText="Customer Name">
+         <font>
+            <Font name="Ubuntu Medium" size="19.0" />
+         </font></JFXTextField>
+        <JFXTextField fx:id="txtAddress" focusColor="#dd0055" labelFloat="true" layoutX="29.0" layoutY="233.0" prefHeight="37.0" prefWidth="349.0" promptText="Customer Address">
+         <font>
+            <Font name="Ubuntu Medium" size="19.0" />
+         </font></JFXTextField>
+        <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="61.0" layoutY="317.0" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #a7118e;" text="Save" textFill="WHITE">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#36f2ff" />
+                  <Stop color="#ff70ed" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill></JFXButton>
+        <Label fx:id="lblID" layoutX="51.0" layoutY="48.0" prefHeight="53.0" prefWidth="136.0">
+         <font>
+            <Font name="Victorian LET Plain:1.0" size="32.0" />
+         </font></Label>
+      <JFXButton fx:id="btnExit" buttonType="RAISED" layoutX="968.0" layoutY="4.0" onAction="#btnExitOnAction" prefHeight="54.0" prefWidth="65.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/Cancel_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#7affec" />
+                  <Stop color="#7affec" offset="0.007246376811594203" />
+                  <Stop color="#ffb27a" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+      </JFXButton>
+      <TableView fx:id="tblCustomer" layoutX="411.0" layoutY="101.0" prefHeight="287.0" prefWidth="609.0">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="95.0" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="146.0" text="Name" />
+            <TableColumn fx:id="colAddr" prefWidth="252.0" text="Address" />
+            <TableColumn fx:id="colRemove" prefWidth="111.0" text="Remove" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnUpdate" layoutX="220.0" layoutY="316.0" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #ff9e0c;" text="Update" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#7cffbd" />
+                  <Stop color="#ff6e6e" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+      </JFXButton>
+      <Text layoutX="410.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Form" wrappingWidth="289.19580078125">
+         <font>
+            <Font name="Victorian LET Plain:1.0" size="46.0" />
+         </font>
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#007075" />
+                  <Stop color="#3deb5a" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Text>
+      <JFXButton fx:id="btnNew" buttonType="RAISED" layoutX="346.0" layoutY="94.0" onAction="#btnNewOnAction" prefHeight="54.0" prefWidth="65.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/img.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#7affec" />
+                  <Stop color="#7affec" offset="0.007246376811594203" />
+                  <Stop color="#ffb27a" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+      </JFXButton>
+    </children>
+</AnchorPane>

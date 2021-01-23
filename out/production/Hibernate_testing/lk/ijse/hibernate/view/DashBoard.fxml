@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="322.0" prefWidth="882.0" style="-fx-background-color: linear-gradient(to right top, #ffaace, #f9c2e6, #f4d8f5, #f5edfd, #ffffff);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.controller.DashBoardController">
+   <children>
+      <JFXButton fx:id="btnCustomer" buttonType="RAISED" layoutX="34.0" layoutY="117.0" onAction="#btnCustomerOnAction" prefHeight="160.0" prefWidth="187.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="179.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/customer_100px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e27bff" />
+                  <Stop color="#54d1ff" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <Text layoutX="249.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SP Groccery">
+         <font>
+            <Font name="Ubuntu Medium" size="57.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#330a65" />
+                  <Stop color="#1ac2ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <JFXButton fx:id="btnItem" buttonType="RAISED" layoutX="243.0" layoutY="117.0" onAction="#btnItemOnAction" prefHeight="160.0" prefWidth="187.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="179.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/ingredients_100px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e27bff" />
+                  <Stop color="#54d1ff" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnOrder" buttonType="RAISED" layoutX="460.0" layoutY="117.0" onAction="#btnOrderOnAction" prefHeight="160.0" prefWidth="187.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="179.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/todo_list_100px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e27bff" />
+                  <Stop color="#54d1ff" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnAllView" buttonType="RAISED" layoutX="660.0" layoutY="117.0" onAction="#btnAllViewOnAction" prefHeight="160.0" prefWidth="187.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="179.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/system_information_100px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e27bff" />
+                  <Stop color="#54d1ff" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>
