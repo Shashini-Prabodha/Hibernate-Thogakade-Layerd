@@ -318,6 +318,8 @@ public class CashierViewForm {
     }
 
     public void btnLogoutOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) btnLogout.getScene().getWindow();
+        stage.close();
     }
 
     ArrayList<String> customerNameList;
